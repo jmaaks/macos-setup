@@ -9,7 +9,8 @@
 #  1. Installs 
 #    - xcode
 #    - homebrew
-#    - ansible (via brew) 
+#    - pip
+#    - ansible (via pip) from http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
 #    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)  
 #  2. Kicks off the ansible playbook
 #    - main.yml
@@ -42,6 +43,7 @@ else
   fancy_echo "Xcode already installed. Skipping."
 fi
 
+# Install Homebrew
 if ! command -v brew >/dev/null; then
   fancy_echo "Installing Homebrew..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" </dev/null
@@ -49,10 +51,23 @@ else
   fancy_echo "Homebrew already installed. Skipping."
 fi
 
+# Install PiP via easy_install
+if ! command -v pip >/dev/null; then
+  fancy_echo "Installing Pip..."
+  easy_install --user pip </dev/null
+  printf 'if [ -f ~/.bashrc ]; then\n  source ~/.bashrc\nfi\n' >> $HOME/.profile
+  printf 'export PATH=$PATH:$HOME/Library/Python/2.7/bin\n' >> $HOME/.bashrc
+  source $HOME/.profile
+else
+  fancy_echo "PiP already installed. Skipping."
+fi
+
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
 if ! command -v ansible >/dev/null; then
   fancy_echo "Installing Ansible ..."
-  brew install ansible 
+  pip install --user --upgrade ansible
+  sudo mkdir /etc/ansible
+  sudo curl -L https://raw.githubusercontent.com/ansible/ansible/devel/examples/ansible.cfg -o /etc/ansible/ansible.cfg
 else
   fancy_echo "Ansible already installed. Skipping."
 fi
@@ -63,7 +78,7 @@ if [ -d "./laptop" ]; then
   rm -rf ./laptop/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/siyelo/laptop.git 
+git clone https://github.com/gallian/laptop.git 
 
 fancy_echo "Changing to laptop repo dir ..."
 cd laptop
