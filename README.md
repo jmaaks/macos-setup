@@ -1,6 +1,6 @@
 # Laptop
 
-Laptop is a playbook to set up an OS X laptop (for web development).
+Laptop is a playbook to set up an OS X laptop.
 
 It installs and configures most of the software I (galliangg) use on my Mac. 
 
