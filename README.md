@@ -34,7 +34,7 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/laptop/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
@@ -47,7 +47,7 @@ As above, download and bootstrap the script. But stop it before it starts ansibl
 
 1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `galliangg/laptop` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/laptop/master/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
 
 
 1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password. 
