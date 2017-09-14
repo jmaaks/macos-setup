@@ -2,7 +2,7 @@
 
 Laptop is a playbook to set up an OS X laptop (for web development).
 
-It installs and configures most of the software Siyelo uses on our Macs for web and software development. 
+It installs and configures most of the software I (galliangg) use on my Mac. 
 
 It can be run multiple times on the same machine safely. It installs, upgrades, or skips packages based on what is already installed on the machine.
 
@@ -20,7 +20,7 @@ We've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/siyelo/laptop/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/laptop/master/install.sh)"
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
@@ -31,9 +31,9 @@ If you want to add/remove to the list of apps/utils installed, its pretty straig
 
 As above, download and bootstrap the script. But stop it before it starts ansible, and edit the playbook as desired, before re-running ansible.
 
-1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `siyelo/laptop` repo locally...
+1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `galliangg/laptop` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/siyelo/laptop/master/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/laptop/master/install.sh)"
 
 
 1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password. 
@@ -67,49 +67,7 @@ You can do this as many times as you like and re-run the `ansible-playbook` comm
 
 Apps installed with Homebrew Cask:
 
-  - 1password
-  - alfred # | http://www.alfredapp.com 
-  - apptrap # remove associated prefs when uninstalling
-  - appzapper # uninstaller
-  - bettertouchtool # window snapping. (maybe Moom is more lightweight?)
-  - carbon-copy-cloner # backups | https://bombich.com/download
-  - cheatsheet # know your shortcuts
-  - cyberduck # ftp, s3, openstack
-  - dash # totally sick API browser
-  - diffmerge # free visual diq
-  - disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
-  - dropbox # a worse Mega Sync
-  - firefox 
-  - flux # get more sleep
-  - google-chrome
-  - imageoptim # optimize images
-  - istumbler # network discovery GUI
-  - jumpcut # awesome clipboard
-  - karabiner # Keyboard customization
-  - licecap # GIFs !
-  - little-snitch # awesome outbound firewall
-  - megasync # a better Dropbox  
-  - monolingual # remove unneeded osx lang files
-  - nvalt # fast note taking
-  - qlcolorcode # quick look syntax highlighting
-  - qlimagesize # quick look image dimensions
-  - qlmarkdown # quick look .md files
-  - qlstephen # quick look extension-less text files
-  - rowanj-gitx # Awesome gitx fork.
-  - sequel-pro # FREE SQL GUI!
-  - shortcat # kill your mouse
-  - shuttle # ssh management
-  - skype # 
-  - sublime-text3 # (experimental cask) | http://www.sublimetext.com/
-  - thunderbird # email
-  - tomighty # pomodoro
-  - torbrowser # be the noise
-  - transmission # torrents
-  - tunnelblick # VPN
-  - vagrant # | https://www.vagrantup.com/downloads.html
-  - vagrant-manager # 
-  - virtualbox # | https://www.virtualbox.org/
-  - vlc 
+  - 
 
 There are several more common cask apps listed in the playbook.yml - simply uncomment them to include them in your install. 
 
@@ -119,38 +77,6 @@ There are several more common cask apps listed in the playbook.yml - simply unco
 Things installed with Homebrew:
 
   - autoconf
-  - autojump # quickly navigate from cmd line
-  - bash # Bash 4
-  - boot2docker # for running docker on osx
-  - brew-cask
-  - coreutils # Install GNU core utilities (those that come with OS X are outdated)
-  - cowsay # amazing
-  - docker # | https://docs.docker.com/installation/mac/
-  - findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-  - git
-  - go
-  - gpg
-  - hub # github
-  - keybase # in alpha at time of writing.
-  - mtr # better traceroute
-  - node
-  - npm
-  - openssl
-  - packer
-  - postgresql # yes and nosql
-  - python
-  - rbenv # ruby. Just installs binaries - assumes you bring in the dotfiles.
-  - readline
-  - redis
-  - rename # rename multiple files
-  - rsync
-  - ruby-build
-  - sqlite # production rails DB
-  - the_silver_searcher # fast ack-grep
-  - tmux
-  - vim
-  - wget
-  - zsh
 
 There are several more utils listed in the playbook.yml - simply uncomment them to include them in your install. 
 
