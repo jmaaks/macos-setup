@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Welcome to the siyelo laptop script!
+# Welcome to the galliangg laptop script!
 # Be prepared to turn your OSX box into 
 # a development beast.
 #
@@ -78,7 +78,7 @@ if [ -d "./laptop" ]; then
   rm -rf ./laptop/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/gallian/laptop.git 
+git clone https://github.com/gallian/macos-setup.git 
 
 fancy_echo "Changing to laptop repo dir ..."
 cd laptop
