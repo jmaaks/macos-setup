@@ -158,6 +158,7 @@
       #- rsync
       #- ruby-build
       #- sqlite # production rails DB
+      - sshpass
       #- the_silver_searcher # fast ack-grep
       #- tmux
       #- vim
@@ -239,14 +240,18 @@
     #  when: brew_cask_installed.stat.exists == false
 
     ### UTILS
+    - name: Create sshpass v1.06 formula
+      shell: brew create https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
       with_items: brew_utils
 
-    - name: Cleanup after brewing
+    - name: Install
       shell: brew cleanup
 
+    - name: Cleanup after brewing
+      shell: brew cleanup
 
     ### APPZ
 
