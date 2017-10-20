@@ -109,7 +109,6 @@
 
     brew_taps:
       - "homebrew/core"
-      - "homebrew/versions"
       - "caskroom/cask"
       - "caskroom/drivers"
       - "caskroom/versions"
