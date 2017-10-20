@@ -239,8 +239,8 @@
     #  when: brew_cask_installed.stat.exists == false
 
     ### UTILS
-    - name: Create sshpass v1.06 formula
-      shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
+   # - name: Create sshpass v1.06 formula
+   #   shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
