@@ -108,12 +108,12 @@
     install_oh_my_zsh:  false
 
     brew_taps:
-      - homebrew/core
-      - homebrew/versions
-      - caskroom/cask
-      - caskroom/drivers
-      - caskroom/versions
-      - buo/cask-upgrade
+      - "homebrew/core"
+      - "homebrew/versions"
+      - "caskroom/cask"
+      - "caskroom/drivers"
+      - "caskroom/versions"
+      - "buo/cask-upgrade"
 
     #dotfile_repo_username: glennr # the GH repo where your dotfiles are
 
