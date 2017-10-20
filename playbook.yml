@@ -92,7 +92,7 @@
       #- transmit # ftp
       - trash-it
       - tunnelblick-beta # VPN
-      - vmware-fusion
+      - vmware-fusion8 #Still using Version 8
       - vlc
       - whatsapp
       - wineskin-winery
@@ -211,7 +211,7 @@
       - name: Messages
         path: /Applications/Messages.app
         pos: 12
-        
+
     zsh_path: /usr/local/bin/zsh
 
     home: "{{ lookup('env','HOME') }}"
