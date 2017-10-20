@@ -164,54 +164,6 @@
       #- wget
       #- zsh
 
-
-    dockitems_to_remove:
-      - Launchpad
-      - Reminders
-      - Maps
-      - Photos
-      - FaceTime
-      - iBooks
-      - iTunes
-
-    dockitems_to_persist:
-      - name: Safari
-        path: "/Applications/Google Chrome.app"
-        pos: 1
-      - name: Safari Technology Preview
-        path: "/Applications/Safari Technology Preview.app"
-        pos: 2
-      - name: Mail
-        path: /Applications/Mail.app
-        pos: 3
-      - name: Contacts
-        path: /Applications/Contacts.app
-        pos: 4
-      - name: Calendar
-        path: /Applications/Calendar.app
-        pos: 5
-      - name: Notes
-        path: /Applications/Utilities/Notes.app
-        pos: 6
-      - name: App Store
-        path: "/Applications/App Store.app"
-        pos: 7
-      - name: System Applications
-        path: "/Applications/System Applications.app"
-        pos: 8
-      - name: VMware Fusion
-        path: "/Applications/VMware Fusion.app"
-        pos: 9
-      - name: BBEdit
-        path: /Applications/BBEdit.app
-        pos: 10
-      - name: Terminal
-        path: /Applications/Terminal.app
-        pos: 11
-      - name: Messages
-        path: /Applications/Messages.app
-        pos: 12
-        
     zsh_path: /usr/local/bin/zsh
 
     home: "{{ lookup('env','HOME') }}"
@@ -314,47 +266,47 @@
 
     ### DOTFILES
 
-#    - name: Check rcm is installed
-#      stat: path=/usr/local/bin/rcup
-#      register: rcm_installed
-#
-#    - name: Install rcm for dotfiles management
-#      shell: brew tap thoughtbot/formulae && brew install rcm
-#      when: rcm_installed.stat.exists == false
-#
-#    - name: Check ~/src dir exists
-#      stat: path=~/src/
-#      register: src_dir_exists
-#
-#    - name: Assures ~/src dir exists
-#      file: path=~/src state=directory
-#
-#    - name: Assures ~/src/thoughtbot dir exists
-#      file: path=~/src/thoughtbot state=directory
-#
-#    - name: Install thoughtbot/dotfiles
-#      git: repo=https://github.com/thoughtbot/dotfiles.git dest=~/src/thoughtbot/dotfiles
-#
-#    - name: Link ~/dotfiles to ~/src/thoughtbot/dotfiles
-#      file: dest=~/dotfiles
-#            src=~/src/thoughtbot/dotfiles
-#            state=link
-#            force=yes
-#
-#    - name: Assures ~/src/{{ dotfile_repo_username }} dir exists
-#      file: path=~/src/{{ dotfile_repo_username }} state=directory
-#
-#    - name: Install {{ dotfile_repo_username }}/dotfiles
-#      git: repo=https://github.com/{{ dotfile_repo_username }}/dotfiles.git dest=~/src/{{ dotfile_repo_username }}/dotfiles
-#
-#    - name: Link ~/dotfiles-local to ~/src/{{ dotfile_repo_username }}/dotfiles
-#      file: dest=~/dotfiles-local
-#            src=~/src/{{ dotfile_repo_username }}/dotfiles
-#            state=link
-#            force=yes
-#
-#    - name: Generate dotfiles with rcup
-#      shell: env RCRC=~/dotfiles/rcrc rcup
+    - name: Check rcm is installed
+      stat: path=/usr/local/bin/rcup
+      register: rcm_installed
+
+    - name: Install rcm for dotfiles management
+      shell: brew tap thoughtbot/formulae && brew install rcm
+      when: rcm_installed.stat.exists == false
+
+    - name: Check ~/src dir exists
+      stat: path=~/src/
+      register: src_dir_exists
+
+    - name: Assures ~/src dir exists
+      file: path=~/src state=directory
+
+    - name: Assures ~/src/thoughtbot dir exists
+      file: path=~/src/thoughtbot state=directory
+
+    - name: Install thoughtbot/dotfiles
+      git: repo=https://github.com/thoughtbot/dotfiles.git dest=~/src/thoughtbot/dotfiles
+
+    - name: Link ~/dotfiles to ~/src/thoughtbot/dotfiles
+      file: dest=~/dotfiles
+            src=~/src/thoughtbot/dotfiles
+            state=link
+            force=yes
+
+    - name: Assures ~/src/{{ dotfile_repo_username }} dir exists
+      file: path=~/src/{{ dotfile_repo_username }} state=directory
+
+    - name: Install {{ dotfile_repo_username }}/dotfiles
+      git: repo=https://github.com/{{ dotfile_repo_username }}/dotfiles.git dest=~/src/{{ dotfile_repo_username }}/dotfiles
+
+    - name: Link ~/dotfiles-local to ~/src/{{ dotfile_repo_username }}/dotfiles
+      file: dest=~/dotfiles-local
+            src=~/src/{{ dotfile_repo_username }}/dotfiles
+            state=link
+            force=yes
+
+    - name: Generate dotfiles with rcup
+      shell: env RCRC=~/dotfiles/rcrc rcup
 
 
     ## POST INSTALL STEPS / Cask gotchas
@@ -362,10 +314,10 @@
     # require manual intervention!
     #
 
-#    - name: Run Little Snitch Installer
-#      shell: open /opt/homebrew-cask/Caskroom/little-snitch/3.5.3/Little\ Snitch\ Installer.app
-#      when: "'little-snitch' in applications"
-#
-#    - name: Run Monolingual
-#      shell: open ~/Applications/Monolingual.app
-#      when: "'monolingual' in applications"
+    - name: Run Little Snitch Installer
+      shell: open /opt/homebrew-cask/Caskroom/little-snitch/3.5.3/Little\ Snitch\ Installer.app
+      when: "'little-snitch' in applications"
+
+    - name: Run Monolingual
+      shell: open ~/Applications/Monolingual.app
+      when: "'monolingual' in applications"

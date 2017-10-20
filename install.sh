@@ -1,19 +1,22 @@
 #!/bin/sh
 
 # Welcome to the galliangg laptop script!
-# Be prepared to turn your OSX box into 
+# Be prepared to turn your OSX box into
 # a development beast.
 #
 # This script bootstraps our OSX laptop to a point where we can run
 # Ansible on localhost. It;
-#  1. Installs 
+#  1. Installs
 #    - xcode
 #    - homebrew
 #    - pip
 #    - ansible (via pip) from http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
-#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)  
+#    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)
 #  2. Kicks off the ansible playbook
 #    - main.yml
+#
+#  Run this:
+#  sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
 #
 # It will ask you for your sudo password
 
@@ -38,7 +41,7 @@ set -e
 # Ensure Apple's command line tools are installed
 if ! command -v cc >/dev/null; then
   fancy_echo "Installing xcode ..."
-  xcode-select --install 
+  xcode-select --install
 else
   fancy_echo "Xcode already installed. Skipping."
 fi
@@ -73,16 +76,16 @@ else
 fi
 
 # Clone the repository to your local drive.
-if [ -d "./laptop" ]; then
+if [ -d "./macos-setup" ]; then
   fancy_echo "Laptop repo dir exists. Removing ..."
-  rm -rf ./laptop/
+  rm -rf ./macos-setup/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/gallian/macos-setup.git 
+git clone https://github.com/gallian/macos-setup.git
 
 fancy_echo "Changing to laptop repo dir ..."
-cd laptop
+cd macos-setup
 
-# Run this from the same directory as this README file. 
+# Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
-ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
+ansible-playbook playbook.yml -i hosts --ask-become-pass -vvvv
