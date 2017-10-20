@@ -229,7 +229,7 @@
 
     - name: Instal required Homebrew Taps
       shell: brew tap {{ item }}
-      with_items: brew_taps
+      with_items: "{{ brew_taps }}"
 
     - name: Check homebrew-cask is installed
       stat: path=/usr/local/bin/brew-cask.rb
@@ -245,10 +245,7 @@
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
-      with_items: brew_utils
-
-    - name: Install
-      shell: brew cleanup
+      with_items: "{{ brew_utils }}"
 
     - name: Cleanup after brewing
       shell: brew cleanup
@@ -263,7 +260,7 @@
 
     - name: Install Apps with brew-cask
       shell: brew cask install {{ item }}
-      with_items: applications
+      with_items: "{{ applications }}"
       when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
 
     ### Dockutil fixing
@@ -271,15 +268,15 @@
     - name: Remove all crap from Dock
       shell: dockutil --remove '{{ item }}'
       ignore_errors: true
-      with_items: dockitems_to_remove
+      with_items: "{{ dockitems_to_remove }}"
 
     - name: Check if items in dock exist
       shell: dockutil --find '{{ item.name }}' || dockutil --add '{{ item.path }}'
-      with_items: dockitems_to_persist
+      with_items: "{{ dockitems_to_persist }}"
 
     - name: Fix order
       shell: dockutil --move '{{ item.name }}' --position {{ item.pos }}
-      with_items: dockitems_to_persist
+      with_items: "{{ dockitems_to_persist }}"
 
 
     ### ZSH radness
@@ -313,7 +310,7 @@
 
     - name: Configure System Settings
       script: scripts/system_settings.sh
-      sudo: true
+      become: true
 
 
 
