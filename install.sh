@@ -81,7 +81,7 @@ if [ -d "./macos-setup" ]; then
   rm -rf ./macos-setup/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/gallian/macos-setup.git
+git clone https://github.com/galliangg/macos-setup.git
 
 fancy_echo "Changing to laptop repo dir ..."
 cd macos-setup
