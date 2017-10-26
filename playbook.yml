@@ -45,7 +45,7 @@
       - insomniax
       #- istumbler # network discovery GUI
       - iterm2
-      - java
+      - java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
       #- keka # file archiving
@@ -69,6 +69,7 @@
       #- qlstephen # quick look extension-less text files
       #- rcdefaultapp # set default app for different URLs
       - ringcentral
+      - remote-play
       #- rowanj-gitx # Awesome gitx fork.
       #- seil # Keyboard customization
       - safari-technology-preview
