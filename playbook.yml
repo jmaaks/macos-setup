@@ -12,6 +12,7 @@
       #- apptrap # remove associated prefs when uninstalling
       #- appzapper # uninstaller
       - atom # sublime without annoying popup | https://atom.io/download/mac
+      - asix-ax88179 # Driver for usb ethernet adaptor
       - bbedit
       #- bettertouchtool # window snapping. (maybe Moom is more lightweight?)
       #- betterzipql # quick look for zips
@@ -36,6 +37,7 @@
       - filezilla
       - firefox
       - flux # get more sleep
+      - get-iplayer-automator
       - github-desktop
       - google-chrome
       #- google-drive
@@ -56,10 +58,12 @@
       #- megasync # a better Dropbox
       #- monolingual # remove unneeded osx lang files
       - microsoft-remote-desktop-beta
+      - microsoft-teams
       #- namechanger # rename files in bulk
       #- nosleep # prevent mac from sleeping when closing lid
       #- nvalt # fast note taking
       #- onyx # system maintenance
+      - openemu-experimental
       #- packer # machine images
       - pgadmin4
       - platypus
