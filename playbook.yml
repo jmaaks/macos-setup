@@ -50,6 +50,7 @@
       - java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
+      - keepingyouawake
       #- keka # file archiving
       #- licecap # GIFs !
       #- little-snitch # awesome outbound firewall
@@ -59,6 +60,7 @@
       #- monolingual # remove unneeded osx lang files
       - microsoft-remote-desktop-beta
       - microsoft-teams
+      - namebench
       #- namechanger # rename files in bulk
       #- nosleep # prevent mac from sleeping when closing lid
       #- nvalt # fast note taking
@@ -83,7 +85,7 @@
       - shuttle # ssh management
       - sonos
       #- skitch
-      - skype
+      #- skype
       - slack
       - spotify
       - subler
@@ -109,6 +111,7 @@
       #- xtrafinder # moar Finder!
       #- zoomus # better videoconferences
       - zenmap
+      - zoomus
 
     install_oh_my_zsh:  false
 
