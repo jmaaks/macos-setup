@@ -104,9 +104,10 @@
       - whatsapp
       - wineskin-winery
       - wireshark
-      #- vagrant # | https://www.vagrantup.com/downloads.html
-      #- vagrant-manager #
-      #- virtualbox # | https://www.virtualbox.org/
+      - vagrant # | https://www.vagrantup.com/downloads.html
+      - vagrant-manager #
+      - virtualbox # | https://www.virtualbox.org/
+      - virtualbox-extension-pack
       - xld
       #- xtrafinder # moar Finder!
       #- zoomus # better videoconferences
