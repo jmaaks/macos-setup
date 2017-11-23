@@ -16,15 +16,12 @@
       - bbedit
       #- bettertouchtool # window snapping. (maybe Moom is more lightweight?)
       #- betterzipql # quick look for zips
-      #- bodega # a less-shit mac store
       - bonjour-browser
       - burn
       #- caffeine # prevent mac from sleeping
       #- calibre # berks
       #- carbon-copy-cloner # backups | https://bombich.com/download
       #- cheatsheet # know your shortcuts
-      #- cord # RDP remote control
-      #- cyberduck # ftp, s3, openstack
       #- dash # totally sick API browser
       #- deeper # (w/ onyx) turn on hidden functions
       #- diffmerge # free visual diq
@@ -44,13 +41,13 @@
       - gotomeeting
       #- handbrake # vid compression
       #- imageoptim # optimize images
-      - insomniax
+      #- insomniax
       #- istumbler # network discovery GUI
       - iterm2
       - java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
-      - keepingyouawake
+      - keepingyouawake # replaces insomniax
       #- keka # file archiving
       #- licecap # GIFs !
       #- little-snitch # awesome outbound firewall
@@ -131,7 +128,7 @@
       #- autojump # quickly navigate from cmd line
       #- bash # Bash 4
       #- boot2docker # for running docker on osx
-  #    - bfg # requires java
+      - bfg # requires java
       #- brew-cask
       - cowsay # amazing
       #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
@@ -148,7 +145,6 @@
       #- imagemagick # IDK why, but I always end up needing this beast
       #- keybase # in alpha at time of writing.
       - mas
-      #- mercurial # Used to need it for golang src builds. Who knows, might come in handy again.
       #- mongodb # a shittier PG
       - mtr # better traceroute
       #- mysql # required PHP library
@@ -248,8 +244,8 @@
     #  when: brew_cask_installed.stat.exists == false
 
     ### UTILS
-   # - name: Create sshpass v1.06 formula
-   #   shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
+    - name: Create sshpass v1.06 formula
+      shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
