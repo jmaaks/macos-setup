@@ -33,18 +33,19 @@
       #- fing # network diagnostics
       - filezilla
       - firefox
+      - focusatwill
       - flux # get more sleep
       - get-iplayer-automator
-      - github-desktop
-      - google-chrome
+      - github-beta
+      #- google-chrome
       #- google-drive
-      - gotomeeting
-      #- handbrake # vid compression
+      #- gotomeeting
+      - handbrake # vid compression
       #- imageoptim # optimize images
       #- insomniax
       #- istumbler # network discovery GUI
       - iterm2
-      - java8
+      #- java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
       - keepingyouawake # replaces insomniax
@@ -55,8 +56,8 @@
       #- macvim # a shittier vim
       #- megasync # a better Dropbox
       #- monolingual # remove unneeded osx lang files
-      - microsoft-remote-desktop-beta
-      - microsoft-teams
+      #- microsoft-remote-desktop-beta
+      #- microsoft-teams
       - namebench
       #- namechanger # rename files in bulk
       #- nosleep # prevent mac from sleeping when closing lid
@@ -71,11 +72,11 @@
       #- qlmarkdown # quick look .md files
       #- qlstephen # quick look extension-less text files
       #- rcdefaultapp # set default app for different URLs
-      - ringcentral
+      #- ringcentral
       - remote-play
       #- rowanj-gitx # Awesome gitx fork.
       #- seil # Keyboard customization
-      - safari-technology-preview
+      #- safari-technology-preview
       - sdformatter
       - sequel-pro # FREE SQL GUI!
       #- shortcat # kill your mouse
@@ -96,7 +97,7 @@
       #- transmit # ftp
       - trash-it
       - tunnelblick-beta # VPN
-      - vmware-fusion8 #Still using Version 8
+      #- vmware-fusion8 #Still using Version 8
       - vlc
       - whatsapp
       - wineskin-winery
@@ -109,7 +110,7 @@
       #- xtrafinder # moar Finder!
       #- zoomus # better videoconferences
       - zenmap
-      - zoomus
+      #- zoomus
 
     install_oh_my_zsh:  false
 
@@ -128,7 +129,7 @@
       #- autojump # quickly navigate from cmd line
       #- bash # Bash 4
       #- boot2docker # for running docker on osx
-      - bfg # requires java
+      #- bfg # requires java
       #- brew-cask
       - cowsay # amazing
       #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
@@ -244,9 +245,9 @@
     #  when: brew_cask_installed.stat.exists == false
 
     ### UTILS
-    - name: Create sshpass v1.06 formula
-      shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
-      ignore_errors: yes
+   # - name: Create sshpass v1.06 formula
+   #   shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
+   #   ignore_errors: yes
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
