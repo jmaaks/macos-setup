@@ -76,8 +76,8 @@ defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 #fancy_echo "Saving to disk (not to iCloud) by default"
 #defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-fancy_echo "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
-sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
+#fancy_echo "Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window"
+#sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
 # echo ""
 # echo "Never go into computer sleep mode"
