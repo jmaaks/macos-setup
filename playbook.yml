@@ -31,7 +31,6 @@
       #- eve # learn your shortcuts
       #- evernote
       #- fing # network diagnostics
-
       - filezilla
       - firefox
       - focusatwill
@@ -50,7 +49,7 @@
       #- java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
-      - keepingyouawake # replaces insomniax
+      - keepingyouawake # replaces insomniax & caffeinex
       #- keka # file archiving
       #- licecap # GIFs !
       #- little-snitch # awesome outbound firewall
