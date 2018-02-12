@@ -1,8 +1,6 @@
 ---
 - hosts: all
-
   vars:
-
 #Homebrew Applications
     applications:
       #- 1password
@@ -57,11 +55,9 @@
       #- macvim # a shittier vim
       #- megasync # a better Dropbox
       #- monolingual # remove unneeded osx lang files
-      #- microsoft-remote-desktop-beta
       #- microsoft-teams
       - namebench
       #- namechanger # rename files in bulk
-      #- nosleep # prevent mac from sleeping when closing lid
       #- nvalt # fast note taking
       #- onyx # system maintenance
       - openemu-experimental
