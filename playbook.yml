@@ -74,7 +74,7 @@
       #- qlstephen # quick look extension-less text files
       #- rcdefaultapp # set default app for different URLs
       #- ringcentral
-      - remote-play
+      - remote-play # ps4 remote play
       #- rowanj-gitx # Awesome gitx fork.
       #- seil # Keyboard customization
       #- safari-technology-preview
@@ -93,6 +93,7 @@
       #- thunderbird # email
       #- tomighty # pomodoro
       #- torbrowser # be the noise
+      - touchswitcher # dock in the touch bar
       #- tower # another git client
       #- transmission # torrents
       #- transmit # ftp
