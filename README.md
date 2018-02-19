@@ -23,9 +23,9 @@ It can be run multiple times on the same machine safely. It installs, upgrades, 
 
 ## Requirements
 
-We've tested it on;
+I've tested it on;
 
-* OS X Yosemite (~10.10.4)
+* OS X Yosemite (10.13)
 
 
 ## Installation
@@ -50,7 +50,7 @@ As above, download and bootstrap the script. But stop it before it starts ansibl
       sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
 
 
-1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password. 
+1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password.
 
         ```
         Changing to laptop repo dir ...
@@ -64,13 +64,13 @@ As above, download and bootstrap the script. But stop it before it starts ansibl
 
         cd laptop
 
-1. Edit playbook.yml and add/remove the apps/utils you want. 
+1. Edit playbook.yml and add/remove the apps/utils you want.
 
-        vi playbook.yml
+        nano playbook.yml
 
 1. Kick off ansible manually
 
-        ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv 
+        ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv
 
 You can do this as many times as you like and re-run the `ansible-playbook` command. Ansible is smart enough to skip installed apps, so subsequent runs are super fast.
 
@@ -81,29 +81,29 @@ You can do this as many times as you like and re-run the `ansible-playbook` comm
 
 Apps installed with Homebrew Cask:
 
-  - 
+  -
 
-There are several more common cask apps listed in the playbook.yml - simply uncomment them to include them in your install. 
+There are several more common cask apps listed in the playbook.yml - simply uncomment them to include them in your install.
 
 
-### Packages/Utilities 
- 
+### Packages/Utilities
+
 Things installed with Homebrew:
 
   - autoconf
 
-There are several more utils listed in the playbook.yml - simply uncomment them to include them in your install. 
+There are several more utils listed in the playbook.yml - simply uncomment them to include them in your install.
 
 
 ### System Settings
 
-It also installs a few useful system preferences/settings/tweaks with a toned-down verson of Matt Mueller's [OSX-for Hackers script](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716). 
+It also installs a few useful system preferences/settings/tweaks with a toned-down verson of Matt Mueller's [OSX-for Hackers script](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716).
 
 It does some reasonably gnarly stuff e.g.
 
   - hide spotlight icon
   - disable app Gate Keeper
-  - change stand-by delay from 1hr to 12hrs. 
+  - change stand-by delay from 1hr to 12hrs.
   - Set trackpad tracking rate.
   - Set mouse tracking rate.
   - and lots more...
@@ -117,7 +117,7 @@ TODO: moar sick settings with https://github.com/ryanmaclean/OSX-Post-Install-Sc
 
 It then syncs your user prefs with dotfiles+rcm
 
-It grabs the [thoughttbot/dotfiles](https://github.com/thoughtbot/dotfiles) repo, saves it in `~/src/thoughtbot/dotfiles` and symlinks it to ~/dotfiles. 
+It grabs the [thoughttbot/dotfiles](https://github.com/thoughtbot/dotfiles) repo, saves it in `~/src/thoughtbot/dotfiles` and symlinks it to ~/dotfiles.
 
 It then grabs [glennr/dotfiles](https://github.com/glennr/dotfiles) repo, saves it in `~/src/glennr/dotfiles` and symlinks it to ~/dotfiles-local
 
@@ -148,7 +148,7 @@ Keep your application settings in sync.
 TODO: Add Mackup task
 
 
-### Other 
+### Other
 
 - install fonts like a boss : http://lapwinglabs.com/blog/hacker-guide-to-setting-up-your-mac
 
@@ -163,7 +163,7 @@ TODO: Add Mackup task
 
 ## Development
 
-You shouldn't wipe your entire workstation and start from scratch just to test changes to the playbook. 
+You shouldn't wipe your entire workstation and start from scratch just to test changes to the playbook.
 
 Instead, you can follow theses instructions for [how to build a Mac OS X VirtualBox VM](https://github.com/geerlingguy/mac-osx-virtualbox-vm), on which you can continually run and re-run this playbook to test changes and make sure things work correctly.
 
@@ -175,7 +175,7 @@ Simply spin up the Yosemite box in a VM, and have vagrant kick off the laptop se
 
 ### Whats included?
 
-Nada. Well not much. The whole point is to test the process of getting our OSX dev machines from zero to hero. 
+Nada. Well not much. The whole point is to test the process of getting our OSX dev machines from zero to hero.
 
 The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsutton/osx-vm-templates). However the setup notes above uses Packer, which installs Xcode CLI tools. This can't be automated in an actual test run, and needs user intervention to install.
 
@@ -183,10 +183,10 @@ The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsut
 ### Test Setup
 
 1. Get [Homebrew Cask](http://caskroom.io/)
-    
+
         brew install caskroom/cask/brew-cask
 
-1. Install [Vagrant](https://www.vagrantup.com/downloads) 
+1. Install [Vagrant](https://www.vagrantup.com/downloads)
 
         brew cask install --appdir="/Applications" vagrant
 
@@ -196,13 +196,13 @@ The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsut
 
 1. cd into this project directory;
 
-1. Run 
+1. Run
 
         vagrant init http://files.dryga.com/boxes/osx-yosemite-10.10.3.0.box;
 
 1. The Vagrantfile should be ready as soon as Vagrant downloads the box;
 
-1. Start VM 
+1. Start VM
 
         vagrant up
 
@@ -223,7 +223,7 @@ The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsut
 
 ## Author
 
-[Glenn Roberts](http://glenn-roberts.com), 2015. 
+[Glenn Roberts](http://glenn-roberts.com), 2015.
 
 
 ## Credits
@@ -241,4 +241,3 @@ This project is based off the work of the following folks;
   - [Battleschool](http://spencer.gibb.us/blog/2014/02/03/introducing-battleschool) is a more general solution than what I've built here. (It may be a better option if you don't want to fork this repo and hack it for your own workstation...).
   - [osxc](https://github.com/osxc) is another more general solution, set up so you can fork the [xc-custom](https://github.com/osxc/xc-custom) repo and get your own local environment bootstrapped quickly.
   - [MWGriffin/ansible-playbooks](https://github.com/MWGriffin/ansible-playbooks) was the original inspiration for this repository, but this project has since been completely rewritten.
-
