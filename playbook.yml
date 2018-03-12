@@ -152,6 +152,7 @@
       #- packer
       # - phantomjs
       #- postgresql # yes and nosql
+      - pwgen # password generator
       #- python
       #- rbenv # ruby. Just installs binaries - assumes you bring in the dotfiles.
       #- readline
