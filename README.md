@@ -7,12 +7,12 @@ It installs and configures most of the software I (galliangg) use on my Mac.
 The script follows this website:
 http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
 
-Install Command Line Developer Tools
-Install 'pip'
-Add Python 2.7 user bin directory to the PATH variable
-Install/Upgrade 'ansible' via 'pip'
-Create the system-wide Ansible directory
-Copy the default Ansible configuration file to the system-wide Ansible directory
+* Install Command Line Developer Tools
+* Install 'pip'
+* Add Python 2.7 user bin directory to the PATH variable
+* Install/Upgrade 'ansible' via 'pip'
+* Create the system-wide Ansible directory
+* Copy the default Ansible configuration file to the system-wide Ansible directory
 
 Ansible can then install Homebrew, Homebrew Cask
 
