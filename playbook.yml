@@ -63,6 +63,7 @@
       #- packer # machine images
       - pgadmin4
       - platypus
+      - prolific-pl2303
       #- qlcolorcode # quick look syntax highlighting
       #- qlimagesize # quick look image dimensions
       #- qlmarkdown # quick look .md files
@@ -128,14 +129,15 @@
       #- boot2docker # for running docker on osx
       #- bfg # requires java
       #- brew-cask
-      - cowsay # amazing
+      #- cowsay # amazing
       #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
       #- ctags
       #- docker # | https://docs.docker.com/installation/mac/
       - dockutil
       #- ffmpeg
       #- findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-      - git-lfs
+      - gandi.cli
+      #- git-lfs
       #- go
       #- gpg
       #- homebrew/dupes/grep # more recent version of OS X grep # ansible bug: https://github.com/ansible/ansible-modules-extras/issues/252
@@ -146,9 +148,10 @@
       #- mongodb # a shittier PG
       - mtr # better traceroute
       #- mysql # required PHP library
+      - nmap
       #- node
       #- npm
-      #- openssl
+      - openssl # for easyrsa
       #- packer
       # - phantomjs
       #- postgresql # yes and nosql
