@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Welcome to the galliangg laptop script!
+# Welcome to the jmaaks macos-setup script!
 # Be prepared to turn your OSX box into
 # a development beast.
 #
@@ -16,7 +16,7 @@
 #    - main.yml
 #
 #  Run this:
-#  sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
+#  sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
 #
 # It will ask you for your sudo password
 
@@ -81,11 +81,11 @@ if [ -d "./macos-setup" ]; then
   rm -rf ./macos-setup/
 fi
 fancy_echo "Cloning laptop repo ..."
-git clone https://github.com/galliangg/macos-setup.git
+git clone https://github.com/jmaaks/macos-setup.git
 
 fancy_echo "Changing to laptop repo dir ..."
 cd macos-setup
 
 # Run this from the same directory as this README file.
 fancy_echo "Running ansible playbook ..."
-ansible-playbook playbook.yml -i hosts -K
+# ansible-playbook playbook.yml -i hosts -K
