@@ -9,13 +9,13 @@
       #- anvil # run sites locally
       #- apptrap # remove associated prefs when uninstalling
       #- appzapper # uninstaller
-      - atom # sublime without annoying popup | https://atom.io/download/mac
-      - asix-ax88179 # Driver for usb ethernet adaptor
-      - bbedit
+      #- atom # sublime without annoying popup | https://atom.io/download/mac
+      #- asix-ax88179 # Driver for usb ethernet adaptor
+      #- bbedit
       #- bettertouchtool # window snapping. (maybe Moom is more lightweight?)
       #- betterzipql # quick look for zips
-      - bonjour-browser
-      - burn
+      #- bonjour-browser
+      #- burn
       #- calibre # berks
       #- carbon-copy-cloner # backups | https://bombich.com/download
       #- cheatsheet # know your shortcuts
@@ -24,29 +24,29 @@
       #- diffmerge # free visual diq
       #- disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
       #- dropbox # a worse Mega Sync
-      - etcher
+      #- etcher
       #- eve # learn your shortcuts
-      #- evernote
-      #- fing # network diagnostics
-      - filezilla
-      - firefox
-      - focusatwill
-      - flux # get more sleep
-      - get-iplayer-automator
-      - github-beta
-      #- google-chrome
+      - evernote
+      - fing # network diagnostics
+      #- filezilla
+      #- firefox
+      #- focusatwill
+      #- flux # get more sleep
+      #- get-iplayer-automator
+      #- github-beta
+      - google-chrome
       #- google-drive
       #- gotomeeting
-      - handbrake # vid compression
+      #- handbrake # vid compression
       #- imageoptim # optimize images
       #- insomniax
       #- istumbler # network discovery GUI
-      - ip-in-menu-bar
+      #- ip-in-menu-bar
       - iterm2
       #- java8
       #- jumpcut # awesome clipboard
       #- karabiner # Keyboard customization
-      - keepingyouawake # replaces insomniax & caffeinex
+      #- keepingyouawake # replaces insomniax & caffeinex
       #- keka # file archiving
       #- licecap # GIFs !
       #- little-snitch # awesome outbound firewall
@@ -55,59 +55,59 @@
       #- megasync # a better Dropbox
       #- monolingual # remove unneeded osx lang files
       #- microsoft-teams
-      - namebench
+      #- namebench
       #- namechanger # rename files in bulk
       #- nvalt # fast note taking
       #- onyx # system maintenance
-      - openemu-experimental
+      #- openemu-experimental
       #- packer # machine images
-      - pgadmin4
-      - platypus
-      - prolific-pl2303
+      #- pgadmin4
+      #- platypus
+      #- prolific-pl2303
       #- qlcolorcode # quick look syntax highlighting
       #- qlimagesize # quick look image dimensions
       #- qlmarkdown # quick look .md files
       #- qlstephen # quick look extension-less text files
       #- rcdefaultapp # set default app for different URLs
       #- ringcentral
-      - remote-play # ps4 remote play
+      #- remote-play # ps4 remote play
       #- rowanj-gitx # Awesome gitx fork.
       #- seil # Keyboard customization
       #- safari-technology-preview
-      - sdformatter
-      - sequel-pro # FREE SQL GUI!
+      #- sdformatter
+      #- sequel-pro # FREE SQL GUI!
       #- shortcat # kill your mouse
-      - shuttle # ssh management
-      - sonos
+      #- shuttle # ssh management
+      #- sonos
       #- skitch
       #- skype
       - slack
-      - spotify
-      - subler
+      #- spotify
+      #- subler
       #- sublime-text3 # (experimental cask) | http://www.sublimetext.com/
       #- subtitles # auto download subtitles
       #- thunderbird # email
       #- tomighty # pomodoro
       #- torbrowser # be the noise
-      - touchswitcher # dock in the touch bar
+      #- touchswitcher # dock in the touch bar
       #- tower # another git client
       #- transmission # torrents
       #- transmit # ftp
-      - trash-it
-      - tunnelblick-beta # VPN
+      #- trash-it
+      #- tunnelblick-beta # VPN
       #- vmware-fusion8 #Still using Version 8
-      - vlc
-      - whatsapp
-      - wineskin-winery
-      - wireshark
+      #- vlc
+      #- whatsapp
+      #- wineskin-winery
+      #- wireshark
       - vagrant # | https://www.vagrantup.com/downloads.html
       - vagrant-manager #
       - virtualbox # | https://www.virtualbox.org/
       - virtualbox-extension-pack
-      - xld
+      #- xld
       #- xtrafinder # moar Finder!
       #- zoomus # better videoconferences
-      - zenmap
+      #- zenmap
       #- zoomus
 
     install_oh_my_zsh:  false
@@ -132,11 +132,11 @@
       #- cowsay # amazing
       #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
       #- ctags
-      #- docker # | https://docs.docker.com/installation/mac/
+      - docker # | https://docs.docker.com/installation/mac/
       - dockutil
       #- ffmpeg
       #- findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
-      - gandi.cli
+      #- gandi.cli
       #- git-lfs
       #- go
       #- gpg
@@ -144,19 +144,19 @@
       #- hub # github
       #- imagemagick # IDK why, but I always end up needing this beast
       #- keybase # in alpha at time of writing.
-      - mas
+      #- mas
       #- mongodb # a shittier PG
-      - mtr # better traceroute
+      #- mtr # better traceroute
       #- mysql # required PHP library
-      - nmap
+      #- nmap
       #- node
       #- npm
-      - openssl # for easyrsa
+      #- openssl # for easyrsa
       #- packer
       # - phantomjs
       #- postgresql # yes and nosql
-      - pwgen # password generator
-      #- python
+      #- pwgen # password generator
+      - python
       #- rbenv # ruby. Just installs binaries - assumes you bring in the dotfiles.
       #- readline
       #- redis
@@ -173,7 +173,6 @@
 
 
     dockitems_to_remove:
-      - Launchpad
       - Reminders
       - Maps
       - Photos
@@ -182,42 +181,21 @@
       - iTunes
 
     dockitems_to_persist:
-      - name: Safari
+      - name: Chrome
         path: "/Applications/Google Chrome.app"
         pos: 1
-      - name: Safari Technology Preview
-        path: "/Applications/Safari Technology Preview.app"
+      - name: Evernote
+        path: "/Applications/Evernote.app"
         pos: 2
-      - name: Mail
-        path: /Applications/Mail.app
+      - name: iTerm2
+        path: /Applications/iTernm2.app
         pos: 3
-      - name: Contacts
-        path: /Applications/Contacts.app
-        pos: 4
-      - name: Calendar
-        path: /Applications/Calendar.app
-        pos: 5
-      - name: Notes
-        path: /Applications/Utilities/Notes.app
-        pos: 6
       - name: App Store
         path: "/Applications/App Store.app"
-        pos: 7
+        pos: 4
       - name: System Applications
         path: "/Applications/System Applications.app"
-        pos: 8
-      - name: VMware Fusion
-        path: "/Applications/VMware Fusion.app"
-        pos: 9
-      - name: BBEdit
-        path: /Applications/BBEdit.app
-        pos: 10
-      - name: Terminal
-        path: /Applications/Terminal.app
-        pos: 11
-      - name: Messages
-        path: /Applications/Messages.app
-        pos: 12
+        pos: 5
 
     zsh_path: /usr/local/bin/zsh
 
