@@ -1,8 +1,8 @@
-# Laptop
+# MacOS-Setup
 
-Laptop is a playbook to set up an OS X laptop.
+MacOS-Setup is a playbook to set up an OS X laptop.
 
-It installs and configures most of the software I (galliangg) use on my Mac.
+It installs and configures most of the software I (jmaaks) use on my Mac.
 
 The script follows this website:
 http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
@@ -34,7 +34,7 @@ I've tested it on;
 
 If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
 
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
@@ -45,9 +45,9 @@ If you want to add/remove to the list of apps/utils installed, its pretty straig
 
 As above, download and bootstrap the script. But stop it before it starts ansible, and edit the playbook as desired, before re-running ansible.
 
-1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `galliangg/laptop` repo locally...
+1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `jmaaks/macos-setup` repo locally...
 
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/galliangg/macos-setup/master/install.sh)"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
 
 
 1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password.
@@ -223,13 +223,14 @@ The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsut
 
 ## Author
 
-[Glenn Roberts](http://glenn-roberts.com), 2015.
+[Jeff Maaks](http://github.com/jmaaks), 2018.
 
 
 ## Credits
 
 This project is based off the work of the following folks;
 
+* Gallian's [macos-setup](https://github.com/galliangg/macos-setup])
 * Eduardo de Oliveira Hernandes' [ansible-macbook](https://github.com/eduardodeoh/ansible-macbook])
 * Jeff Geerlings' [Mac Dev Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook)
 * [Thoughtbot/laptop](https://github.com/thoughtbot/laptop) (boostrapping, dev tools)
