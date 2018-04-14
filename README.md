@@ -230,8 +230,8 @@ The Vagrant box we use is a [clean-ish install of OSX](https://github.com/timsut
 
 This project is based off the work of the following folks;
 
-* Gallian's [macos-setup](https://github.com/galliangg/macos-setup])
-* Eduardo de Oliveira Hernandes' [ansible-macbook](https://github.com/eduardodeoh/ansible-macbook])
+* Gallian's [macos-setup](https://github.com/galliangg/macos-setup)
+* Eduardo de Oliveira Hernandes' [ansible-macbook](https://github.com/eduardodeoh/ansible-macbook)
 * Jeff Geerlings' [Mac Dev Ansible Playbook](https://github.com/geerlingguy/mac-dev-playbook)
 * [Thoughtbot/laptop](https://github.com/thoughtbot/laptop) (boostrapping, dev tools)
 * [OSX for Hackers](https://gist.github.com/MatthewMueller/e22d9840f9ea2fee4716) (awesome osx tweaks)
