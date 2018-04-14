@@ -188,14 +188,11 @@
         path: "/Applications/Evernote.app"
         pos: 2
       - name: iTerm2
-        path: /Applications/iTernm2.app
+        path: /Applications/iTerm.app
         pos: 3
       - name: App Store
         path: "/Applications/App Store.app"
         pos: 4
-      - name: System Applications
-        path: "/Applications/System Applications.app"
-        pos: 5
 
     zsh_path: /usr/local/bin/zsh
 
