@@ -102,8 +102,8 @@
       #- wireshark
       - vagrant # | https://www.vagrantup.com/downloads.html
       - vagrant-manager #
-      - virtualbox # | https://www.virtualbox.org/
-      - virtualbox-extension-pack
+      #- virtualbox # | https://www.virtualbox.org/
+      #- virtualbox-extension-pack
       #- xld
       #- xtrafinder # moar Finder!
       #- zoomus # better videoconferences
@@ -219,9 +219,9 @@
       stat: path=/usr/local/bin/brew-cask.rb
       register: brew_cask_installed
 
-    #- name: Install homebrew-cask
-    #  shell: brew install brew-cask
-    #  when: brew_cask_installed.stat.exists == false
+    - name: Install homebrew-cask
+      shell: brew install brew-cask
+      when: brew_cask_installed.stat.exists == false
 
     ### UTILS
    # - name: Create sshpass v1.06 formula
@@ -246,7 +246,9 @@
     - name: Install Apps with brew-cask
       shell: brew cask install {{ item }}
       with_items: "{{ applications }}"
-      when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
+      when: item not in installed_applications.results|map(attribute='stdout')
+      # when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
+
 
     ### Dockutil fixing
 
