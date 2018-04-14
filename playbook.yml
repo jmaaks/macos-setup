@@ -23,6 +23,7 @@
       #- deeper # (w/ onyx) turn on hidden functions
       #- diffmerge # free visual diq
       #- disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
+      - docker
       #- dropbox # a worse Mega Sync
       #- etcher
       #- eve # learn your shortcuts
@@ -49,7 +50,7 @@
       #- keepingyouawake # replaces insomniax & caffeinex
       #- keka # file archiving
       #- licecap # GIFs !
-      #- little-snitch # awesome outbound firewall
+      - little-snitch # awesome outbound firewall
       #- mactracker # benchmarking
       #- macvim # a shittier vim
       #- megasync # a better Dropbox
@@ -132,8 +133,8 @@
       #- cowsay # amazing
       #- coreutils # Install GNU core utilities (those that come with OS X are outdated)
       #- ctags
-      - docker # | https://docs.docker.com/installation/mac/
-      - dockutil
+      #- docker # | https://docs.docker.com/installation/mac/
+      #- dockutil
       #- ffmpeg
       #- findutils  # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
       #- gandi.cli
@@ -156,7 +157,7 @@
       # - phantomjs
       #- postgresql # yes and nosql
       #- pwgen # password generator
-      - python
+      #- python
       #- rbenv # ruby. Just installs binaries - assumes you bring in the dotfiles.
       #- readline
       #- redis
