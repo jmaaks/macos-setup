@@ -26,7 +26,7 @@
       #- dropbox # a worse Mega Sync
       #- etcher
       #- eve # learn your shortcuts
-      - evernote
+      #- evernote
       - fing # network diagnostics
       #- filezilla
       #- firefox
@@ -34,7 +34,7 @@
       #- flux # get more sleep
       #- get-iplayer-automator
       #- github-beta
-      - google-chrome
+      #- google-chrome
       #- google-drive
       #- gotomeeting
       #- handbrake # vid compression
