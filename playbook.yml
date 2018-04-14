@@ -182,13 +182,13 @@
       - iTunes
 
     dockitems_to_persist:
-      - name: Chrome
+      - name: Google Chrome
         path: "/Applications/Google Chrome.app"
         pos: 1
       - name: Evernote
         path: "/Applications/Evernote.app"
         pos: 2
-      - name: iTerm2
+      - name: iTerm
         path: /Applications/iTerm.app
         pos: 3
       - name: App Store
