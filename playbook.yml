@@ -139,7 +139,7 @@
 
     - name: Install Apps with brew-cask
       shell: brew cask install {{ item }}
-      debug: msg="Installing: {{ item }}"
+      debug: "msg='Installing: {{ item }}'"
       with_items: "{{ applications }}"
       when: item not in installed_applications.results | map(attribute='stdout')
       #when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
