@@ -60,6 +60,10 @@ If you want to add/remove to the list of apps/utils installed, simple edit playb
 
 You can do this as many times as you like and re-run the `ansible-playbook` command. Ansible is smart enough to skip installed apps, so subsequent runs are super fast.
 
+### TO-DO for playbook.yml
+
+* Find a fix for installing VirtualBox via Homebrew without GUI permission granting
+* Modularize playbook contents
 
 ## Included Applications / Configuration
 
