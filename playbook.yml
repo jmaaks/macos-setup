@@ -1,9 +1,13 @@
 ---
 - hosts: all
+  connection: local
+
   vars:
+  
 #Homebrew Applications
     applications:
       - docker
+      - dropbox
       - evernote
       - fing # network diagnostics
       - iterm2
@@ -156,14 +160,10 @@
       with_items: "{{ dockitems_to_persist }}"
 
 
-#    - name: Use GNU tools instead of osx counterparts (grep find etc)
-#      shell: echo 'export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc
-
-
     ### OSX SETTINGS
 
     - name: Configure System Settings
-      script: ./scripts/system_settings.sh
+      script: scripts/system_settings.sh
       become: true
 
 
