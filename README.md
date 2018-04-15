@@ -1,10 +1,12 @@
 # MacOS-Setup
 
-MacOS-Setup is a playbook to set up an OS X laptop.
-
-It installs and configures most of the software I use on my Mac.
+MacOS-Setup is a shell script and Ansible playbook to set up a fresh macOS environment.  It installs and configures most of the software I use on my Mac.
 
 It can be run multiple times on the same machine safely. It installs, upgrades, or skips packages based on what is already installed on the machine.
+
+To kick off this process, simply start the install.sh script with:
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
 
 
 ## Requirements
@@ -13,16 +15,10 @@ I've tested it on:
 
 * macOS High Sierra (10.13.4)
 
-
-## Installation
-
-This project consists of two main components:
-* install.sh - shell script to bootstrap the installation
-* playbook.yml - Ansible playbook
-
-### Bootstrap Script: install.sh
+## Bootstrap Script: install.sh
 
 The install.sh script bootstraps a new macOS installation by performing the following tasks:
+
 * Install Xcode Command Line Developer Tools
 * Install Homebrew
 * Install Pip
@@ -31,20 +27,14 @@ The install.sh script bootstraps a new macOS installation by performing the foll
 * Clone this repository locally
 * Call playbook.yml via Ansible to continue the installation/configuration process
 
-To kick off this process, simply start the install.sh script with:
-
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
-
-
-You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
-
-#### TO-DO
+### TO-DO for install.sh
 * Verify sudo keep-alive is working
 * See whether pip installation needed (since now included in Python by default)
 
-### Ansible playbook: playbook.yml
+## Ansible playbook: playbook.yml
 
 This is the main Ansible installation/configuration script.  It contains the following sections:
+
 * hosts: all
 * vars: 
   * applications: the list of all applications that should be installed (using "brew cask install")
