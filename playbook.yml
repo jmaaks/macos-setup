@@ -132,7 +132,7 @@
     ### APPS
 
     - name: Check for installed apps(casks)
-      shell: brew cask list | grep -w {{ item }}
+      shell: brew cask list | grep -x {{ item }} # Note: -x required on grep so "vagrant" doesn't match "vagrant-manager"
       register: installed_applications
       with_items: "{{ applications }}"
       ignore_errors: true
