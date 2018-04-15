@@ -134,7 +134,7 @@
     - name: Check for installed apps(casks)
       shell: brew cask list | grep {{ item }}
       register: installed_applications
-      with_items: applications
+      with_items: "{{ applications }}"
       ignore_errors: true
 
     - name: Install Apps with brew-cask
