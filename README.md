@@ -2,75 +2,71 @@
 
 MacOS-Setup is a playbook to set up an OS X laptop.
 
-It installs and configures most of the software I (jmaaks) use on my Mac.
-
-The script follows this website:
-http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
-
-* Install Command Line Developer Tools
-* Install 'pip'
-* Add Python 2.7 user bin directory to the PATH variable
-* Install/Upgrade 'ansible' via 'pip'
-* Create the system-wide Ansible directory
-* Copy the default Ansible configuration file to the system-wide Ansible directory
-
-Ansible can then install Homebrew, Homebrew Cask
-
-mas from Homebrew will install Mac App Store apps
+It installs and configures most of the software I use on my Mac.
 
 It can be run multiple times on the same machine safely. It installs, upgrades, or skips packages based on what is already installed on the machine.
 
 
 ## Requirements
 
-I've tested it on;
+I've tested it on:
 
-* OS X Yosemite (10.13)
+* macOS High Sierra (10.13.4)
 
 
 ## Installation
 
-### Fast Install
+This project consists of two main components:
+* install.sh - shell script to bootstrap the installation
+* playbook.yml - Ansible playbook
 
-If you'd like to start with my default list of tools and apps (see Included Apps/Config below), then simply install with;
+### Bootstrap Script: install.sh
+
+The install.sh script bootstraps a new macOS installation by performing the following tasks:
+* Install Xcode Command Line Developer Tools
+* Install Homebrew
+* Install Pip
+* Add Python 2.7 user bin directory to the PATH variable (for pip)
+* Install Ansible via pip
+* Clone this repository locally
+* Call playbook.yml via Ansible to continue the installation/configuration process
+
+To kick off this process, simply start the install.sh script with:
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
 
 
 You can always customize the install after-the-fact (see below), and re-run the playbook. It will skip over any installed apps.
 
-### Custom Install
+#### TO-DO
+* Verify sudo keep-alive is working
+* See whether pip installation needed (since now included in Python by default)
 
-If you want to add/remove to the list of apps/utils installed, its pretty straightforward.
+### Ansible playbook: playbook.yml
 
-As above, download and bootstrap the script. But stop it before it starts ansible, and edit the playbook as desired, before re-running ansible.
+This is the main Ansible installation/configuration script.  It contains the following sections:
+* hosts: all
+* vars: 
+  * applications: the list of all applications that should be installed (using "brew cask install")
+  * brew_taps: additional Homebrew repositories
+  * brew_utils: 
+  * docitems_to_remove: list of apps to remove from the Mac dock
+  * docitems_to_persist: list of apps to keep in Mac dock
+  * home: user home directory
+* tasks:
+  * Check Homebrew is installed
+  * Install Homebrew
+  * Install required Homebrew taps
+  * Install libraries/utils with Homebrew
+  * Cleanup after brewing
+  * Check for installed apps (casks)
+  * Install apps with brew-cask
+  * Remove items from Mac dock (using dockutil)
+  * Add items to dock (if needed)
+  * Fix dock item order
+  * Configure system settings (via scripts/system_settings.sh)
 
-1. Grab and start the bootstrap script. Let it install the prereqs and clone the full `jmaaks/macos-setup` repo locally...
-
-      sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
-
-
-1. Stop the script (Ctrl+C) when ansible asks for the a 'sudo' password.
-
-        ```
-        Changing to laptop repo dir ...
-
-        Running ansible playbook ...
-        SUDO password:  ^c
-
-        ```
-
-1. Change into the cloned repo dir
-
-        cd laptop
-
-1. Edit playbook.yml and add/remove the apps/utils you want.
-
-        nano playbook.yml
-
-1. Kick off ansible manually
-
-        ansible-playbook playbook.yml -i hosts --ask-sudo-pass -vvvv
+If you want to add/remove to the list of apps/utils installed, simple edit playbook.yml and re-run the bootstrap script.
 
 You can do this as many times as you like and re-run the `ansible-playbook` command. Ansible is smart enough to skip installed apps, so subsequent runs are super fast.
 
@@ -82,8 +78,6 @@ You can do this as many times as you like and re-run the `ansible-playbook` comm
 Apps installed with Homebrew Cask:
 
   -
-
-There are several more common cask apps listed in the playbook.yml - simply uncomment them to include them in your install.
 
 
 ### Packages/Utilities
@@ -129,16 +123,10 @@ It then runs rcup to initialize your dotfiles.
 
 ### MacStore Apps (WIP)
 
-These apps only available via the App Store. (sigh)
+These apps only available via the App Store:
+* 
 
-TODO: Port bork : https://github.com/mattly/bork/blob/master/types/macstore.sh and do this automagically!
-
-  - Monosnap
-  - Pages
-  - Keynote
-  - Numbers
-  - etc
-
+mas from Homebrew will install Mac App Store apps
 
 
 ### Application Settings (WIP)
