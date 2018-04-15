@@ -138,7 +138,8 @@
       ignore_errors: true
 
     - name: Install Apps with brew-cask
-      shell: echo brew cask install {{ item }}
+      shell: brew cask install {{ item }}
+      debug: msg="Installing: {{ item }}"
       with_items: "{{ applications }}"
       when: item not in installed_applications.results | map(attribute='stdout')
       #when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
