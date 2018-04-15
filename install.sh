@@ -4,8 +4,8 @@
 # Be prepared to turn your OSX box into
 # a development beast.
 #
-# This script bootstraps our OSX laptop to a point where we can run
-# Ansible on localhost. It;
+# This script bootstraps our macOS environment to a point where we can run
+# Ansible on localhost. It...
 #  1. Installs
 #    - xcode
 #    - homebrew
@@ -13,7 +13,7 @@
 #    - ansible (via pip) from http://binarynature.blogspot.co.uk/2016/01/install-ansible-on-os-x-el-capitan_30.html
 #    - a few ansible galaxy playbooks (zsh, homebrew, cask etc)
 #  2. Kicks off the ansible playbook
-#    - main.yml
+#    - playbook.yml
 #
 #  Run this:
 #  sh -c "$(curl -fsSL https://raw.githubusercontent.com/jmaaks/macos-setup/master/install.sh)"
@@ -40,7 +40,7 @@ while true; do sudo -v; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 # Ensure Apple's command line tools are installed
 if ! command -v cc >/dev/null; then
-  fancy_echo "Installing xcode ..."
+  fancy_echo "Installing Xcode ..."
   xcode-select --install
 else
   fancy_echo "Xcode already installed. Skipping."
@@ -62,7 +62,7 @@ if ! command -v pip >/dev/null; then
   printf 'export PATH=$PATH:$HOME/Library/Python/2.7/bin\n' >> $HOME/.bashrc
   source $HOME/.profile
 else
-  fancy_echo "PiP already installed. Skipping."
+  fancy_echo "Pip already installed. Skipping."
 fi
 
 # [Install Ansible](http://docs.ansible.com/intro_installation.html).
@@ -77,15 +77,15 @@ fi
 
 # Clone the repository to your local drive.
 if [ -d "./macos-setup" ]; then
-  fancy_echo "Laptop repo dir exists. Removing ..."
+  fancy_echo "macos-setup repo dir exists. Removing ..."
   rm -rf ./macos-setup/
 fi
-fancy_echo "Cloning laptop repo ..."
+fancy_echo "Cloning macos-setup repo ..."
 git clone https://github.com/jmaaks/macos-setup.git
 
-fancy_echo "Changing to laptop repo dir ..."
+fancy_echo "Changing to macos-setup repo dir ..."
 cd macos-setup
 
 # Run this from the same directory as this README file.
-fancy_echo "Running ansible playbook ..."
+fancy_echo "Running Ansible playbook ..."
 ansible-playbook playbook.yml -i hosts -K
