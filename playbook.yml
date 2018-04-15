@@ -140,8 +140,8 @@
     - name: Install Apps with brew-cask
       shell: echo brew cask install {{ item }}
       with_items: "{{ applications }}"
-      #when: item not in installed_applications.results|map(attribute='stdout')
-      when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
+      when: item not in installed_applications.results|map(attribute='stdout')
+      #when: "{{ item not in installed_applications.results|map(attribute='stdout') }}"
 
 
     ### Dockutil fixing
