@@ -3,115 +3,16 @@
   vars:
 #Homebrew Applications
     applications:
-      #- 1password
-      #- adium
-      #- alfred # | http://www.alfredapp.com
-      #- anvil # run sites locally
-      #- apptrap # remove associated prefs when uninstalling
-      #- appzapper # uninstaller
-      #- atom # sublime without annoying popup | https://atom.io/download/mac
-      #- asix-ax88179 # Driver for usb ethernet adaptor
-      #- bbedit
-      #- bettertouchtool # window snapping. (maybe Moom is more lightweight?)
-      #- betterzipql # quick look for zips
-      #- bonjour-browser
-      #- burn
-      #- calibre # berks
-      #- carbon-copy-cloner # backups | https://bombich.com/download
-      #- cheatsheet # know your shortcuts
-      #- dash # totally sick API browser
-      #- deeper # (w/ onyx) turn on hidden functions
-      #- diffmerge # free visual diq
-      #- disk-inventory-x # reclaim space on your expensive-ass Apple SSD | http://www.derlien.com/
       - docker
-      #- dropbox # a worse Mega Sync
-      #- etcher
-      #- eve # learn your shortcuts
-      #- evernote
+      - evernote
       - fing # network diagnostics
-      #- filezilla
-      #- firefox
-      #- focusatwill
-      #- flux # get more sleep
-      #- get-iplayer-automator
-      #- github-beta
-      #- google-chrome
-      #- google-drive
-      #- gotomeeting
-      #- handbrake # vid compression
-      #- imageoptim # optimize images
-      #- insomniax
-      #- istumbler # network discovery GUI
-      #- ip-in-menu-bar
       - iterm2
-      #- java8
-      #- jumpcut # awesome clipboard
-      #- karabiner # Keyboard customization
-      #- keepingyouawake # replaces insomniax & caffeinex
-      #- keka # file archiving
-      #- licecap # GIFs !
       - little-snitch # awesome outbound firewall
-      #- mactracker # benchmarking
-      #- macvim # a shittier vim
-      #- megasync # a better Dropbox
-      #- monolingual # remove unneeded osx lang files
-      #- microsoft-teams
-      #- namebench
-      #- namechanger # rename files in bulk
-      #- nvalt # fast note taking
-      #- onyx # system maintenance
-      #- openemu-experimental
-      #- packer # machine images
-      #- pgadmin4
-      #- platypus
-      #- prolific-pl2303
-      #- qlcolorcode # quick look syntax highlighting
-      #- qlimagesize # quick look image dimensions
-      #- qlmarkdown # quick look .md files
-      #- qlstephen # quick look extension-less text files
-      #- rcdefaultapp # set default app for different URLs
-      #- ringcentral
-      #- remote-play # ps4 remote play
-      #- rowanj-gitx # Awesome gitx fork.
-      #- seil # Keyboard customization
-      #- safari-technology-preview
-      #- sdformatter
-      #- sequel-pro # FREE SQL GUI!
-      #- shortcat # kill your mouse
-      #- shuttle # ssh management
-      #- sonos
-      #- skitch
-      #- skype
       - slack
-      #- spotify
-      #- subler
-      #- sublime-text3 # (experimental cask) | http://www.sublimetext.com/
-      #- subtitles # auto download subtitles
-      #- thunderbird # email
-      #- tomighty # pomodoro
-      #- torbrowser # be the noise
-      #- touchswitcher # dock in the touch bar
-      #- tower # another git client
-      #- transmission # torrents
-      #- transmit # ftp
-      #- trash-it
-      #- tunnelblick-beta # VPN
-      #- vmware-fusion8 #Still using Version 8
-      #- vlc
-      #- whatsapp
-      #- wineskin-winery
-      #- wireshark
       - vagrant # | https://www.vagrantup.com/downloads.html
       - vagrant-manager #
       #- virtualbox # | https://www.virtualbox.org/
       #- virtualbox-extension-pack
-      #- xld
-      #- xtrafinder # moar Finder!
-      #- zoomus # better videoconferences
-      #- zenmap
-      #- zoomus
-
-    install_oh_my_zsh:  false
 
     brew_taps:
       - "homebrew/core"
@@ -180,22 +81,24 @@
       - FaceTime
       - iBooks
       - iTunes
+      - Siri
 
     dockitems_to_persist:
-      - name: Google Chrome
-        path: "/Applications/Google Chrome.app"
-        pos: 1
-      - name: Evernote
-        path: "/Applications/Evernote.app"
-        pos: 2
-      - name: iTerm
-        path: /Applications/iTerm.app
-        pos: 3
       - name: App Store
         path: "/Applications/App Store.app"
+        pos: 1
+      - name: Launchpad
+        path: ""
+        pos: 2
+      - name: Google Chrome
+        path: "/Applications/Google Chrome.app"
+        pos: 3
+      - name: Evernote
+        path: "/Applications/Evernote.app"
         pos: 4
-
-    zsh_path: /usr/local/bin/zsh
+      - name: iTerm
+        path: /Applications/iTerm.app
+        pos: 5
 
     home: "{{ lookup('env','HOME') }}"
 
@@ -214,9 +117,6 @@
       with_items: "{{ brew_taps }}"
 
     ### UTILS
-   # - name: Create sshpass v1.06 formula
-   #   shell: brew create --force https://sourceforge.net/projects/sshpass/files/sshpass/1.06/sshpass-1.06.tar.gz
-   #   ignore_errors: yes
 
     - name: Install libraries/utils with homebrew
       homebrew: name={{ item }} state=present
@@ -225,7 +125,7 @@
     - name: Cleanup after brewing
       shell: brew cleanup
 
-    ### APPZ
+    ### APPS
 
     - name: Check for installed apps(casks)
       shell: brew cask list | grep {{ item }}
@@ -256,31 +156,8 @@
       with_items: "{{ dockitems_to_persist }}"
 
 
-    ### ZSH radness
-
-    - name: Determine if zsh is default/current shell
-      shell: echo $SHELL
-      register: current_shell
-
-#    - name: Enable zsh in /etc/shells
-#      shell: sudo /bin/sh -c 'grep -q "{{ zsh_path }}" /etc/shells || echo "{{ zsh_path }}" >> /etc/shells'
-#      when: current_shell.stdout != '/usr/local/bin/zsh'
-#      #" unbreak my syntax highlighting...
-
-#    - name: Set zsh as default shell
-#      shell: chsh -s {{ zsh_path }}
-#      when: current_shell.stdout != '/usr/local/bin/zsh'
-#      sudo: true
-
 #    - name: Use GNU tools instead of osx counterparts (grep find etc)
 #      shell: echo 'export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.zshrc
-
-
-    - name: Install oh-my-zsh
-      git: repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
-      sudo: false
-      when: install_oh_my_zsh == true
-      tags: install_oh_my_zsh
 
 
     ### OSX SETTINGS
@@ -288,7 +165,6 @@
     - name: Configure System Settings
       script: scripts/system_settings.sh
       become: true
-
 
 
     ### DOTFILES
