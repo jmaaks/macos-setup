@@ -163,7 +163,7 @@
     ### OSX SETTINGS
 
     - name: Configure System Settings
-      shell: scripts/system_settings.sh
+      script: ./scripts/system_settings.sh
       become: true
 
 
